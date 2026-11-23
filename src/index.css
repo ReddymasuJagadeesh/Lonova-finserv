@@ -69,6 +69,197 @@ a:focus-visible {
   to { transform: translateX(-50%); }
 }
 
+@keyframes loan-card-enter {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.loan-section {
+  background: #f5f5f5;
+}
+
+.application-benefits {
+  background: linear-gradient(120deg, #f4eff7 0%, #eee6f3 55%, #e8deef 100%);
+}
+
+.emi-section {
+  background: linear-gradient(145deg, #f8f5fa 0%, #f0eaf5 100%);
+}
+
+.loan-enquiry-section {
+  background: linear-gradient(135deg, #f8f5fa 0%, #f0eaf5 100%);
+}
+
+.loan-enquiry-panel {
+  background: linear-gradient(145deg, #f4edf8 0%, #eee5f4 100%);
+}
+
+.enquiry-decoration {
+  position: absolute;
+  top: 50%;
+  right: -8rem;
+  width: 22rem;
+  height: 22rem;
+  border: 1px solid rgb(133 99 166 / 10%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgb(231 216 240 / 55%), transparent 68%);
+  transform: translateY(-50%);
+}
+
+.enquiry-input {
+  display: block;
+  width: 100%;
+  min-height: 46px;
+  border: 1px solid #dfd4e7;
+  border-radius: 0.75rem;
+  background: rgb(255 255 255 / 90%);
+  padding: 0.7rem 0.9rem;
+  color: #35283e;
+  outline: none;
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.enquiry-input::placeholder { color: #a79bab; }
+.enquiry-input:focus { border-color: #8563a6; box-shadow: 0 0 0 3px rgb(133 99 166 / 13%); }
+
+.emi-results {
+  background: linear-gradient(145deg, #fbf9fc 0%, #f4eef8 100%);
+}
+
+.emi-range {
+  height: 5px;
+  appearance: none;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #8563a6, #cdb8dc);
+  cursor: pointer;
+}
+
+.emi-range::-webkit-slider-thumb {
+  width: 17px;
+  height: 17px;
+  appearance: none;
+  border: 3px solid white;
+  border-radius: 50%;
+  background: #8563a6;
+  box-shadow: 0 1px 5px rgb(73 56 83 / 28%);
+}
+
+.emi-range::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border: 3px solid white;
+  border-radius: 50%;
+  background: #8563a6;
+  box-shadow: 0 1px 5px rgb(73 56 83 / 28%);
+}
+
+.emi-range:focus-visible {
+  outline: 2px solid #8563a6;
+  outline-offset: 4px;
+}
+
+.application-benefit-card {
+  box-shadow: 0 5px 18px rgb(73 56 83 / 5%);
+  transition: transform 260ms ease, box-shadow 260ms ease, border-color 260ms ease;
+}
+
+.application-benefit-card:hover {
+  transform: translateY(-7px);
+  border-color: rgb(133 99 166 / 28%);
+  box-shadow: 0 18px 34px rgb(73 56 83 / 12%);
+}
+
+.application-benefit-glow {
+  position: absolute;
+  top: -3.5rem;
+  right: -3.5rem;
+  width: 9rem;
+  height: 9rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgb(231 216 240 / 78%), transparent 70%);
+  opacity: 0.45;
+  transition: opacity 260ms ease, transform 380ms ease;
+}
+
+.application-benefit-card:hover .application-benefit-glow {
+  opacity: 0.9;
+  transform: scale(1.2);
+}
+
+.application-benefit-icon {
+  animation: benefit-icon-float 3.6s ease-in-out infinite;
+  animation-delay: var(--benefit-delay, 0ms);
+  transition: color 260ms ease, transform 260ms ease;
+}
+
+.application-benefit-card:hover .application-benefit-icon {
+  color: #a63c1b;
+  transform: rotate(-8deg) scale(1.12);
+}
+
+@keyframes benefit-icon-float {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -5px; }
+}
+
+.loan-card {
+  animation: loan-card-enter 650ms both;
+  animation-delay: var(--card-delay, 0ms);
+  transition: border-color 240ms ease, box-shadow 240ms ease;
+}
+
+.loan-card:hover {
+  border-color: #b39ac6;
+  box-shadow: 0 18px 36px rgb(61 39 70 / 13%);
+}
+
+.loan-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 270px;
+  transform-style: preserve-3d;
+  transition: transform 700ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.loan-card:hover .loan-card-inner,
+.loan-card:focus-within .loan-card-inner {
+  transform: rotateY(180deg);
+}
+
+.loan-card-front,
+.loan-card-back {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  backface-visibility: hidden;
+  background: linear-gradient(145deg, #fffafd 0%, #f7f0fa 100%);
+}
+
+.loan-card-front {
+  overflow: hidden;
+}
+
+.loan-card-front img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.loan-card-back {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1.25rem;
+  transform: rotateY(180deg);
+}
+
+.loan-card-back-icon {
+  color: #8563a6;
+}
+
 .marquee-track {
   display: flex;
   width: max-content;
@@ -85,6 +276,17 @@ a:focus-visible {
   html { scroll-behavior: auto; }
   .marquee-track,
   .backers-track { animation-play-state: paused; }
+  .loan-card { animation: none; }
+  .loan-card,
+  .loan-card:hover { transform: none; transition: none; }
+  .loan-card-inner,
+  .loan-card:hover .loan-card-inner,
+  .loan-card:focus-within .loan-card-inner { transform: none; transition: none; }
+  .application-benefit-card,
+  .application-benefit-card:hover { transform: none; transition: none; }
+  .application-benefit-icon { animation: none; }
+  .application-benefit-icon,
+  .application-benefit-glow { transition: none; }
 }
 
 @media (max-width: 640px) {
