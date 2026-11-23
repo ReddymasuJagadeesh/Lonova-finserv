@@ -3,10 +3,10 @@ import Navbar from './navbar';
 import Footer from './footer';
 import { useEffect, useState } from 'react';
 import type { CSSProperties, ReactNode } from 'react';
-import personalLoanImage from '../assets/personalloan.png';
-import homeLoanImage from '../assets/homelaon.png';
-import goldLoanImage from '../assets/goldloan.png';
-import businessLoanImage from '../assets/buisnessloan.png';
+import personalLoanImage from '../assets/personal.png';
+import homeLoanImage from '../assets/home.png';
+import goldLoanImage from '../assets/gold.png';
+import businessLoanImage from '../assets/business.png';
 
 const heroVideo =
   'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260423_161253_c72b1869-400f-45ed-ac0c-52f68c2ed5bd.mp4';
@@ -395,9 +395,9 @@ function UseCasesSection() {
           <h2 id="loan-journey-title" className="mb-6 text-5xl font-medium leading-none tracking-[-0.04em] text-[#35283e] md:text-6xl">Finance for what matters.</h2>
           <p className="max-w-md text-base leading-relaxed text-[#6d6273]">From buying a home to managing a personal expense or growing a business, explore loan options for the plans you’re working toward.</p>
           <div className="mt-8 grid max-w-xl grid-cols-1 gap-3 sm:grid-cols-2" aria-label="Explore loan options">
-            {loanProducts.map(({ name, terms, icon: Icon, accent }) => (
+            {loanProducts.map(({ name, terms, icon: Icon }) => (
               <a key={name} href={`#${name.toLowerCase().replace(/ /g, '-')}`} className="group flex min-w-0 items-center gap-3 rounded-2xl border border-[#8563a6]/10 bg-white/80 p-3.5 shadow-sm shadow-[#493853]/[0.03] transition-all duration-200 hover:-translate-y-1 hover:border-[#8563a6]/25 hover:bg-white hover:shadow-md">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#f5f0f8]" style={{ color: accent }}><Icon className="h-5 w-5" aria-hidden="true" /></span>
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#f5f0f8] text-[#8563a6]"><Icon className="h-5 w-5" aria-hidden="true" /></span>
                 <span className="min-w-0"><span className="block text-sm font-semibold text-[#493853]">{name}</span><span className="mt-0.5 block text-xs leading-relaxed text-[#817487]">{terms}</span></span>
                 <ArrowRight className="ml-auto h-4 w-4 shrink-0 text-[#9a8ba2] transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
               </a>
